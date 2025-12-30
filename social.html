@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL SOCIETY - 37세, 게임의 룰이 바뀝니다</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C9A962;
+            --gold-light: #E8D5A3;
+            --dark: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #2A2A2A;
+            --light-gray: #888;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/hero-rooftop.jpg') center center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: 15px;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: var(--dark-gray);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--gold);
+            letter-spacing: 5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            margin-bottom: 80px;
+            font-weight: 300;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-gray) 100%);
+        }
+
+        .problem-quote {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 60px;
+            border-left: 4px solid var(--gold);
+            background: rgba(201, 169, 98, 0.05);
+        }
+
+        .problem-quote p {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold-light);
+            line-height: 2;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pain-point {
+            padding: 40px;
+            background: var(--medium-gray);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .pain-point:hover {
+            transform: translateY(-10px);
+        }
+
+        .pain-point h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .pain-point p {
+            color: var(--light-gray);
+            font-size: 1rem;
+        }
+
+        /* Insight Section */
+        .insight-section {
+            position: relative;
+            padding: 150px 20px;
+            background: url('images/transformation.jpg') center center/cover no-repeat fixed;
+        }
+
+        .insight-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .insight-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .insight-main {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+
+        .insight-main span {
+            color: var(--gold);
+        }
+
+        .game-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .game-box {
+            padding: 50px;
+            border-radius: 4px;
+        }
+
+        .game-box.youth {
+            background: rgba(100, 100, 100, 0.3);
+            border: 1px solid #555;
+        }
+
+        .game-box.status {
+            background: rgba(201, 169, 98, 0.15);
+            border: 1px solid var(--gold);
+        }
+
+        .game-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .game-box.youth h3 {
+            color: #888;
+        }
+
+        .game-box.status h3 {
+            color: var(--gold);
+        }
+
+        .game-box ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .game-box li {
+            padding: 10px 0;
+            color: var(--light-gray);
+            font-size: 1rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: var(--dark);
+        }
+
+        .phases {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 100px;
+        }
+
+        .phase-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            padding: 50px 40px;
+            background: var(--dark-gray);
+            border-radius: 4px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold);
+        }
+
+        .phase-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(201, 169, 98, 0.2);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .phase-card h3 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .phase-card h4 {
+            font-size: 1rem;
+            color: var(--light-gray);
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .phase-card p {
+            color: var(--white);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Academy Section */
+        .academy-section {
+            background: var(--dark-gray);
+        }
+
+        .academy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .academy-item {
+            background: var(--dark);
+            padding: 50px 35px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .academy-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        .academy-item h3 {
+            color: var(--gold);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .academy-item ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .academy-item li {
+            padding: 8px 0;
+            color: var(--light-gray);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .academy-item li:last-child {
+            border-bottom: none;
+        }
+
+        /* Activities Section */
+        .activities-section {
+            background: var(--dark);
+        }
+
+        .activity-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 2px;
+        }
+
+        .activity-row.reverse {
+            direction: rtl;
+        }
+
+        .activity-row.reverse > * {
+            direction: ltr;
+        }
+
+        .activity-image {
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .activity-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: var(--dark-gray);
+        }
+
+        .activity-content h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .activity-content h4 {
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .activity-content p {
+            color: var(--light-gray);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Seasons Section */
+        .seasons-section {
+            padding: 120px 0;
+            background: var(--dark);
+        }
+
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .season-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .season-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .season-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .season-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 25px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .season-card h3 {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+        }
+
+        .season-card h4 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .season-card p {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+
+        /* Brotherhood Section */
+        .brotherhood-section {
+            position: relative;
+            padding: 150px 20px;
+            background: url('images/brotherhood.jpg') center center/cover no-repeat;
+        }
+
+        .brotherhood-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .brotherhood-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .brotherhood-content h2 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .brotherhood-content .main-text {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+            text-align: left;
+        }
+
+        .value-item {
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid var(--gold);
+        }
+
+        .value-item h4 {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .value-item p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--dark-gray);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--dark);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--gold);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-header {
+            padding: 40px;
+            text-align: center;
+            background: var(--medium-gray);
+        }
+
+        .pricing-card.featured .pricing-header {
+            background: linear-gradient(135deg, var(--gold) 0%, #A8893D 100%);
+        }
+
+        .pricing-card.featured .pricing-header h3,
+        .pricing-card.featured .pricing-header .price {
+            color: var(--dark);
+        }
+
+        .pricing-header h3 {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .pricing-header .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .pricing-header .price span {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .pricing-body {
+            padding: 40px;
+        }
+
+        .pricing-body ul {
+            list-style: none;
+        }
+
+        .pricing-body li {
+            padding: 12px 0;
+            color: var(--light-gray);
+            border-bottom: 1px solid var(--medium-gray);
+            font-size: 0.95rem;
+        }
+
+        .pricing-body li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-body li::before {
+            content: '>';
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        /* Director Section */
+        .director-section {
+            background: var(--dark);
+        }
+
+        .director-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .director-name {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        .director-title {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            margin-bottom: 40px;
+        }
+
+        .director-quote {
+            font-size: 1.4rem;
+            color: var(--white);
+            line-height: 2;
+            margin-bottom: 40px;
+            padding: 40px;
+            border: 1px solid var(--medium-gray);
+            background: var(--dark-gray);
+        }
+
+        .director-quote span {
+            color: var(--gold);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            padding: 150px 20px;
+            background: url('images/private-party.jpg') center center/cover no-repeat;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-content h2 span {
+            color: var(--gold);
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            margin-bottom: 50px;
+        }
+
+        .cta-button-large {
+            display: inline-block;
+            padding: 25px 80px;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button-large:hover {
+            background: var(--gold-light);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 20px;
+            background: var(--dark);
+            text-align: center;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        footer .logo {
+            font-size: 2rem;
+            color: var(--gold);
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-logo {
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+
+            .hero-tagline {
+                font-size: 1.6rem;
+            }
+
+            .game-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .academy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-row {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-row.reverse {
+                direction: ltr;
+            }
+
+            .seasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-logo {
+                font-size: 2.2rem;
+                letter-spacing: 5px;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .seasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .season-card {
+                height: 350px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0% { opacity: 1; top: 10px; }
+            100% { opacity: 0; top: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-logo playfair">ROYAL SOCIETY</h1>
+            <p class="hero-tagline">37세, 게임의 룰이 바뀝니다.</p>
+            <p class="hero-sub">성공한 남자들의 프라이빗 소셜 클럽</p>
+            <a href="#contact" class="cta-button">입장 신청하기</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section section">
+        <h2 class="section-title playfair">THE PROBLEM</h2>
+        <p class="section-subtitle">대한민국 3040 남성의 현실</p>
+
+        <div class="problem-quote">
+            <p>
+                "회사에선 팀장이고, 연봉도 괜찮고, 차도 있고, 집도 마련했는데...<br>
+                퇴근하면 만날 사람이 없습니다."
+            </p>
+        </div>
+
+        <div class="pain-points">
+            <div class="pain-point">
+                <h3>고립감</h3>
+                <p>사회적 성공은 거뒀으나 진정한 친구가 없습니다. 학창시절 친구들은 결혼하고 육아에 바쁩니다.</p>
+            </div>
+            <div class="pain-point">
+                <h3>괴리감</h3>
+                <p>직장에서의 자아와 연애 시장에서의 평가 사이에서 충돌합니다. "아저씨" 취급에 상처받습니다.</p>
+            </div>
+            <div class="pain-point">
+                <h3>염증</h3>
+                <p>소개팅 앱의 가벼운 만남, 결혼정보회사의 건조한 매칭에 지쳤습니다.</p>
+            </div>
+            <div class="pain-point">
+                <h3>갈증</h3>
+                <p>여전히 가슴 뛰는 연애를 갈망합니다. 설렘이 있는 자연스러운 만남을 원합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insight Section -->
+    <section class="insight-section">
+        <div class="insight-overlay"></div>
+        <div class="insight-content">
+            <h2 class="section-title playfair" style="color: var(--gold);">THE INSIGHT</h2>
+            <p class="section-subtitle">The 37 Pivot Theory</p>
+
+            <p class="insight-main">
+                "젊음이 사라진 것이 아닙니다.<br>
+                <span>무기가 교체</span>된 것입니다."
+            </p>
+
+            <div class="game-comparison">
+                <div class="game-box youth">
+                    <h3>YOUTH GAME (Under 35)</h3>
+                    <ul>
+                        <li>외모, 체력, 유행으로 승부</li>
+                        <li>빠른 변화, 즉각적 반응</li>
+                        <li>표면적 매력 중심</li>
+                        <li>젊은 남성이 유리한 리그</li>
+                    </ul>
+                </div>
+                <div class="game-box status">
+                    <h3>STATUS GAME (Over 37)</h3>
+                    <ul>
+                        <li>경제력, 지위, 여유로 승부</li>
+                        <li>깊은 매력, 안정감</li>
+                        <li>지속적 관계 설계</li>
+                        <li>성공한 남성이 유리한 리그</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section section">
+        <h2 class="section-title playfair">THE SOLUTION</h2>
+        <p class="section-subtitle">The Royal System</p>
+
+        <div class="phases">
+            <div class="phase-card">
+                <span class="phase-number">01</span>
+                <h3>THE ACADEMY</h3>
+                <h4>개인 변화</h4>
+                <p>외모, 화법, 태도의 총체적 환골탈태. 프리미엄 1:1 코칭으로 당신을 완전히 새로운 남자로 재탄생시킵니다.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-number">02</span>
+                <h3>THE CIRCLE</h3>
+                <h4>사교 클럽</h4>
+                <p>검증된 남자들의 프라이빗 멤버십. 정기 모임과 이벤트를 통해 개츠비 효과를 경험합니다.</p>
+            </div>
+            <div class="phase-card">
+                <span class="phase-number">03</span>
+                <h3>THE NETWORK</h3>
+                <h4>비즈니스 확장</h4>
+                <p>각 분야 전문가들의 네트워크. 사업 아이디어 공유, 린스타트업 협업, 평생 형제들의 아지트.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Section -->
+    <section class="academy-section section">
+        <h2 class="section-title playfair">THE ACADEMY</h2>
+        <p class="section-subtitle">올인원 프리미엄 코칭</p>
+
+        <div class="academy-grid">
+            <div class="academy-item">
+                <div class="academy-icon">👔</div>
+                <h3>VISUAL DIRECTION</h3>
+                <ul>
+                    <li>백화점/컨템포러리 브랜드 스타일링</li>
+                    <li>체형별 맞춤 핏 가이드</li>
+                    <li>프리미엄 바버샵 컨설팅</li>
+                    <li>향수 선택 및 레이어링</li>
+                    <li>자세 교정 및 보디랭귀지</li>
+                </ul>
+            </div>
+            <div class="academy-item">
+                <div class="academy-icon">🧠</div>
+                <h3>INNER GAME</h3>
+                <ul>
+                    <li>성공한 남자의 자기 확신 구축</li>
+                    <li>여유에서 오는 매력</li>
+                    <li>매력적인 스토리텔링 기법</li>
+                    <li>여성 심리 해독법</li>
+                    <li>관계 발전의 자연스러운 설계</li>
+                </ul>
+            </div>
+            <div class="academy-item">
+                <div class="academy-icon">🎯</div>
+                <h3>FIELD MASTERY</h3>
+                <ul>
+                    <li>청담/이태원 프리미엄 라운지 훈련</li>
+                    <li>호텔 바 실전 매너</li>
+                    <li>자연스러운 어프로치 실습</li>
+                    <li>대화 유지 및 발전 훈련</li>
+                    <li>후속 만남 설계</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities-section">
+        <h2 class="section-title playfair" style="padding-top: 100px;">THE CIRCLE</h2>
+        <p class="section-subtitle">정기 액티비티</p>
+
+        <div class="activity-row">
+            <div class="activity-image" style="background-image: url('images/whiskey-bar.jpg');"></div>
+            <div class="activity-content">
+                <h3>WHISKEY & CIGAR NIGHT</h3>
+                <h4>"신사들의 밤"</h4>
+                <p>프리미엄 시가 라운지와 호텔 바에서 진행되는 싱글 몰트 테이스팅. 비즈니스 인사이트를 공유하고, 클래식하고 깊은 대화를 나눕니다. 월 2회 정기 모임.</p>
+            </div>
+        </div>
+
+        <div class="activity-row reverse">
+            <div class="activity-image" style="background-image: url('images/fine-dining.jpg');"></div>
+            <div class="activity-content">
+                <h3>WINE & DINE</h3>
+                <h4>"미식의 향연"</h4>
+                <p>미슐랭 레스토랑과 프렌치/이탈리안 파인다이닝에서의 와인 페어링 디너. 음식과 삶에 대한 담론을 나누며 세련되고 품격있는 시간을 보냅니다.</p>
+            </div>
+        </div>
+
+        <div class="activity-row">
+            <div class="activity-image" style="background-image: url('images/golf.jpg');"></div>
+            <div class="activity-content">
+                <h3>GOLF & NETWORK</h3>
+                <h4>"필드 위의 신사 협정"</h4>
+                <p>수도권/경기권 프리미엄 골프장에서의 18홀 라운딩. 건강하고 활동적인 분위기에서 비즈니스 네트워킹과 친목을 다집니다.</p>
+            </div>
+        </div>
+
+        <div class="activity-row reverse">
+            <div class="activity-image" style="background-image: url('images/art-gallery.jpg');"></div>
+            <div class="activity-content">
+                <h3>ART & CULTURE</h3>
+                <h4>"문화 큐레이션"</h4>
+                <p>프리미엄 전시회 도슨트 투어, 뮤지컬/오페라 VIP석 관람, 아트페어 프리뷰 투어. 교양과 취향을 함께 나누는 문화 생활.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasons Section -->
+    <section class="seasons-section">
+        <h2 class="section-title playfair">SEASONAL EVENTS</h2>
+        <p class="section-subtitle">시즌별 스페셜 이벤트</p>
+
+        <div class="seasons-grid">
+            <div class="season-card">
+                <img src="images/horseback.jpg" alt="Spring - Horseback Riding">
+                <div class="season-overlay">
+                    <h3>SPRING</h3>
+                    <h4>승마 클래스</h4>
+                    <p>용인/일산 승마 클럽에서의 기초 승마 교육과 브런치</p>
+                </div>
+            </div>
+            <div class="season-card">
+                <img src="images/pool-party.jpg" alt="Summer - Pool Party">
+                <div class="season-overlay">
+                    <h3>SUMMER</h3>
+                    <h4>풀파티 & 요트</h4>
+                    <p>한남동 프라이빗 풀파티, 부산 해운대 요트 파티</p>
+                </div>
+            </div>
+            <div class="season-card">
+                <img src="images/glamping.jpg" alt="Autumn - Glamping">
+                <div class="season-overlay">
+                    <h3>AUTUMN</h3>
+                    <h4>글램핑 & 캠핑</h4>
+                    <p>가평/양평 프리미엄 글램핑, 바베큐 & 불멍 나이트</p>
+                </div>
+            </div>
+            <div class="season-card">
+                <img src="images/ski.jpg" alt="Winter - Ski">
+                <div class="season-overlay">
+                    <h3>WINTER</h3>
+                    <h4>스키 리조트</h4>
+                    <p>용평/휘닉스 스키 트립, 에프터 스키 파티</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brotherhood Section -->
+    <section class="brotherhood-section">
+        <div class="brotherhood-overlay"></div>
+        <div class="brotherhood-content">
+            <h2 class="playfair">BROTHERHOOD</h2>
+            <p class="main-text">
+                "이 세상에서 가장 든든한 건<br>
+                믿을 수 있는 형제입니다."
+            </p>
+
+            <div class="values-grid">
+                <div class="value-item">
+                    <h4>BROTHERHOOD (형제애)</h4>
+                    <p>고립된 3040 남성들이 서로 믿고 의지할 수 있는 소셜 서클을 형성합니다.</p>
+                </div>
+                <div class="value-item">
+                    <h4>TRANSFORMATION (변화)</h4>
+                    <p>외모·화법·태도의 총체적 환골탈태. 밖에서 들어온 사람과 나가는 사람이 다릅니다.</p>
+                </div>
+                <div class="value-item">
+                    <h4>HIGH-SOCIAL (상류 문화)</h4>
+                    <p>저급한 헌팅이 아닌 럭셔리 라이프스타일을 함께 향유합니다.</p>
+                </div>
+                <div class="value-item">
+                    <h4>PRAGMATISM (실용주의)</h4>
+                    <p>연봉 8천으로도 충분히 품격 있는 삶을 설계할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section section">
+        <h2 class="section-title playfair">MEMBERSHIP</h2>
+        <p class="section-subtitle">당신의 가치에 투자하십시오</p>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>ACADEMY</h3>
+                    <p class="price">700<span>만원</span></p>
+                </div>
+                <div class="pricing-body">
+                    <ul>
+                        <li>1:1 밀착 코칭 10회</li>
+                        <li>백화점 스타일링 동행</li>
+                        <li>바버샵/그루밍 컨설팅</li>
+                        <li>24시간 카카오톡 피드백</li>
+                        <li>졸업 후 6개월 팔로업</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-header">
+                    <h3>PREMIUM</h3>
+                    <p class="price">1,000<span>만원</span></p>
+                </div>
+                <div class="pricing-body">
+                    <ul>
+                        <li>1:1 밀착 코칭 15회</li>
+                        <li>토탈 스타일링 패키지</li>
+                        <li>VIP 이벤트 3회 초대</li>
+                        <li>프라이빗 파티 참석권</li>
+                        <li>평생 커뮤니티 액세스</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>MEMBERSHIP</h3>
+                    <p class="price">300<span>만원/년</span></p>
+                </div>
+                <div class="pricing-body">
+                    <ul>
+                        <li>전체 정기 모임 참석</li>
+                        <li>시즌 이벤트 우선 초대</li>
+                        <li>프라이빗 파티 참석권</li>
+                        <li>비즈니스 네트워킹</li>
+                        <li>제휴 혜택 제공</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director Section -->
+    <section class="director-section section">
+        <h2 class="section-title playfair">DIRECTOR</h2>
+        <p class="section-subtitle">당신의 변화를 이끄는 사람</p>
+
+        <div class="director-content">
+            <h3 class="director-name playfair">ROYD</h3>
+            <p class="director-title">3040 남자의 연애와 라이프스타일을 재설계하는 디렉터</p>
+
+            <div class="director-quote">
+                뻔한 연애 기술이 아닌,<br>
+                당신의 매력을 극대화하여 <span>압도적인 격차</span>를 만듭니다.<br><br>
+                37세, 이제 시행착오는 끝났습니다.<br>
+                <span>당신의 가치</span>를 이곳에서 증명하십시오.
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2 class="playfair">
+                소년들의 놀이터에서 나와,<br>
+                진짜 남자들의 <span>ROYAL SOCIETY</span>로
+            </h2>
+            <p>지금 바로 입장 신청을 하시면, 디렉터 Royd가 직접 연락드립니다.</p>
+            <a href="#" class="cta-button-large">입장 신청하기</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="logo playfair">ROYAL SOCIETY</p>
+        <p>37세, 게임의 룰이 바뀝니다.</p>
+        <p style="margin-top: 30px; font-size: 0.8rem;">© 2025 Royal Society. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.pain-point, .phase-card, .academy-item, .season-card, .pricing-card, .value-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

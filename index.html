@@ -1,0 +1,2835 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL SOCIETY - Official Business Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C9A962;
+            --gold-light: #E8D5A3;
+            --gold-dark: #A8893D;
+            --dark: #0A0A0A;
+            --dark-gray: #141414;
+            --medium-gray: #1E1E1E;
+            --light-gray: #888;
+            --lighter-gray: #AAA;
+            --white: #FFFFFF;
+            --section-bg: #111;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(201, 169, 98, 0.2);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/hero-rooftop.jpg') center center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 1000px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 25px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .hero-logo {
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 20px;
+            color: var(--gold);
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--lighter-gray);
+            margin-bottom: 50px;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        /* Document Container */
+        .document {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Part Header */
+        .part-header {
+            padding: 100px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--medium-gray);
+            margin-bottom: 60px;
+        }
+
+        .part-number {
+            font-size: 0.9rem;
+            color: var(--gold);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .part-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .part-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            font-weight: 300;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--white);
+            margin: 40px 0 20px;
+        }
+
+        .subsection-title-gold {
+            color: var(--gold);
+        }
+
+        /* Text Styles */
+        p {
+            margin-bottom: 20px;
+            color: var(--lighter-gray);
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: var(--white);
+        }
+
+        .highlight {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .bold {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            padding: 40px 50px;
+            background: var(--medium-gray);
+            border-left: 4px solid var(--gold);
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        .quote-block p {
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            line-height: 2;
+            margin: 0;
+        }
+
+        .quote-block.dark {
+            background: rgba(201, 169, 98, 0.08);
+        }
+
+        /* Code Block / Diagram */
+        .code-block {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 30px 40px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--lighter-gray);
+            margin: 30px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 20px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--lighter-gray);
+        }
+
+        li strong {
+            color: var(--white);
+        }
+
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .check-list li {
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--dark-gray);
+        }
+
+        th {
+            background: var(--medium-gray);
+            color: var(--gold);
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--medium-gray);
+            color: var(--lighter-gray);
+        }
+
+        tr:hover td {
+            background: rgba(201, 169, 98, 0.05);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 35px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Value Cards */
+        .value-card {
+            background: var(--dark-gray);
+            border-left: 4px solid var(--gold);
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .value-card h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            margin-bottom: 15px;
+        }
+
+        .value-card .quote {
+            font-style: italic;
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Phase Cards */
+        .phase-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .phase-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .phase-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(201, 169, 98, 0.15);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .phase-card h3 {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .phase-card h4 {
+            font-size: 0.95rem;
+            color: var(--light-gray);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .phase-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Image Section */
+        .image-section {
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .image-section.full-width {
+            margin-left: -40px;
+            margin-right: -40px;
+            width: calc(100% + 80px);
+        }
+
+        .image-caption {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark-gray);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 40px 0;
+        }
+
+        .column h4 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Comparison Box */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .comparison-box {
+            padding: 40px;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .comparison-box.dim {
+            background: rgba(50, 50, 50, 0.3);
+        }
+
+        .comparison-box.highlight-box {
+            background: rgba(201, 169, 98, 0.1);
+            border-color: var(--gold);
+        }
+
+        .comparison-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .comparison-box.dim h3 {
+            color: var(--light-gray);
+        }
+
+        .comparison-box.highlight-box h3 {
+            color: var(--gold);
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .pricing-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--gold);
+            transform: scale(1.02);
+        }
+
+        .pricing-header {
+            padding: 30px;
+            text-align: center;
+            background: var(--medium-gray);
+        }
+
+        .pricing-card.featured .pricing-header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+        }
+
+        .pricing-header h3 {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .pricing-card.featured .pricing-header h3 {
+            color: var(--dark);
+        }
+
+        .pricing-header .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-header .price {
+            color: var(--dark);
+        }
+
+        .pricing-header .price span {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .pricing-body {
+            padding: 30px;
+        }
+
+        .pricing-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-body li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .pricing-body li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-body li::before {
+            content: '→';
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 50px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-marker {
+            width: 100px;
+            flex-shrink: 0;
+            text-align: right;
+        }
+
+        .timeline-marker h4 {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .timeline-marker span {
+            color: var(--light-gray);
+            font-size: 0.85rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-left: 30px;
+            border-left: 2px solid var(--medium-gray);
+        }
+
+        .timeline-content h4 {
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        /* Persona Box */
+        .persona-box {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .persona-header {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .persona-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--dark);
+        }
+
+        .persona-info h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .persona-info p {
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            padding-left: 20px;
+            border-left: 3px solid var(--gold);
+            color: var(--lighter-gray);
+        }
+
+        /* Full Width Image Banner */
+        .banner {
+            position: relative;
+            height: 500px;
+            margin: 80px 0;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+        }
+
+        .banner-content {
+            max-width: 600px;
+        }
+
+        .banner-content h2 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .banner-content p {
+            font-size: 1.1rem;
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        /* Activities Grid */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .activity-card {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            overflow: hidden;
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .activity-card-content {
+            padding: 25px;
+        }
+
+        .activity-card h3 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .activity-card h4 {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .activity-card ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .activity-card li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding: 80px 40px;
+            background: var(--dark-gray);
+            text-align: center;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        footer .logo {
+            font-size: 2.5rem;
+            color: var(--gold);
+            letter-spacing: 15px;
+            margin-bottom: 20px;
+        }
+
+        footer .tagline {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        footer .closing {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(201, 169, 98, 0.08);
+            border-left: 4px solid var(--gold);
+            text-align: left;
+        }
+
+        footer .closing p {
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            font-style: italic;
+            line-height: 2;
+        }
+
+        footer .copyright {
+            margin-top: 50px;
+            color: var(--light-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--medium-gray);
+            margin: 60px 0;
+        }
+
+        .divider-gold {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 80px 0;
+        }
+
+        /* Image Row - Multiple Images Side by Side */
+        .image-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .image-row-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-row-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-row-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-row-caption {
+            background: var(--dark-gray);
+            padding: 15px 20px;
+            text-align: center;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Full Width Image Section */
+        .full-image-section {
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-image-section img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .full-image-section:hover img {
+            transform: scale(1.02);
+        }
+
+        .full-image-caption {
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 30px 25px;
+            color: var(--gold-light);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Seasons Grid - Four Images */
+        .seasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 50px 0;
+        }
+
+        .season-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .season-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .season-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .season-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px 15px 15px;
+            color: var(--gold);
+            font-size: 0.85rem;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        /* Persona Profile Image */
+        .persona-profile {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+            align-items: flex-start;
+        }
+
+        .persona-image {
+            flex: 0 0 280px;
+        }
+
+        .persona-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .persona-details {
+            flex: 1;
+        }
+
+        /* Network Image */
+        .network-image {
+            margin: 50px 0;
+            position: relative;
+        }
+
+        .network-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .network-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .network-image-text {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .network-image-text h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* Triple Image Row */
+        .triple-image-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 50px 0;
+        }
+
+        .triple-image-row img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .triple-image-row img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .document {
+                padding: 0 30px;
+            }
+
+            .hero-logo {
+                font-size: 3rem;
+                letter-spacing: 10px;
+            }
+
+            .hero-tagline {
+                font-size: 1.8rem;
+            }
+
+            .phase-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .two-columns {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-logo {
+                font-size: 2rem;
+                letter-spacing: 5px;
+            }
+
+            .part-title {
+                font-size: 2rem;
+            }
+
+            .banner {
+                height: 400px;
+            }
+
+            .banner-overlay {
+                padding: 0 30px;
+            }
+
+            .banner-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-row {
+                grid-template-columns: 1fr;
+            }
+
+            .image-row-item img {
+                height: 220px;
+            }
+
+            .seasons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .full-image-section img {
+                height: 300px;
+            }
+
+            .triple-image-row {
+                grid-template-columns: 1fr;
+            }
+
+            .persona-profile {
+                flex-direction: column;
+            }
+
+            .persona-image {
+                flex: none;
+                width: 100%;
+            }
+
+            .network-image img {
+                height: 250px;
+            }
+
+            .network-image-text h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo playfair">ROYAL SOCIETY</div>
+        <div class="nav-links">
+            <a href="#problem">PROBLEM</a>
+            <a href="#insight">INSIGHT</a>
+            <a href="#solution">SOLUTION</a>
+            <a href="#target">TARGET</a>
+            <a href="#business">BUSINESS</a>
+            <a href="#join">JOIN US</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">OFFICIAL BUSINESS PLAN v1.0</div>
+            <h1 class="hero-logo playfair">ROYAL SOCIETY</h1>
+            <p class="hero-tagline">37세, 게임의 룰이 바뀝니다.</p>
+            <p class="hero-sub">
+                대한민국 3040 하이엔드 라이프스타일 & 소셜 플랫폼<br>
+                성공한 남자들의 프라이빗 사교 클럽
+            </p>
+            <a href="#problem" class="cta-button">EXPLORE</a>
+        </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <div class="document">
+        <section class="section" style="padding-top: 100px;">
+            <h2 class="section-title">Executive Summary</h2>
+
+            <p class="lead">
+                <span class="highlight">로열 소사이어티(Royal Society)</span>는 대한민국 37세 이상 미혼 남성을 위한
+                프리미엄 라이프스타일 커뮤니티이자, 관계 재설계 플랫폼입니다.
+            </p>
+
+            <p>
+                우리는 단순한 '연애 기술'을 가르치는 학원이 아닙니다.
+                우리는 성공한 남자들이 모여, 서로의 삶을 업그레이드하고, 품격 있는 관계를 설계하며,
+                함께 새로운 기회를 창출하는 <span class="bold">'엘리트 남성들의 비밀 사교 클럽'</span>입니다.
+            </p>
+
+            <div class="quote-block dark">
+                <p>"37세, 게임의 룰이 바뀝니다."</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 1: THE PROBLEM -->
+    <div class="document" id="problem">
+        <div class="part-header">
+            <p class="part-number">PART 1</p>
+            <h1 class="part-title playfair">THE PROBLEM</h1>
+            <p class="part-subtitle">대한민국 3040 남성의 현실</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">1.1 잃어버린 전성기 증후군</h2>
+
+            <p class="lead">대한민국의 37세 이상 남성들은 역설적인 상황에 놓여 있습니다.</p>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h4>사회적으로는 정점에 올랐습니다</h4>
+                    <ul>
+                        <li>대기업 과장/부장급, 전문직, 사업가로서 경제적 안정을 이룸</li>
+                        <li>연봉 8,000만 원 이상의 수입</li>
+                        <li>10년 이상의 커리어에서 쌓은 전문성과 네트워크</li>
+                        <li>자산 형성의 초기 단계 진입</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>그러나 연애 시장에서는 '아저씨'로 전락했습니다</h4>
+                    <ul>
+                        <li>20대 초반의 열정과 패기로 승부하던 시절의 무기는 녹슬었습니다</li>
+                        <li>사회에서의 성공이 연애 시장에서의 매력으로 번역되지 않습니다</li>
+                        <li>"괜찮은 남자"라는 자아와 "늙은 아저씨"라는 시장의 평가 사이에서 혼란을 겪습니다</li>
+                        <li>결혼정보회사의 스펙 위주 매칭에 염증을 느낍니다</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">1.2 고립된 성공</h2>
+
+            <div class="quote-block">
+                <p>
+                    "회사에선 팀장이고, 연봉도 괜찮고,<br>
+                    차도 있고, 집도 마련했는데...<br>
+                    퇴근하면 만날 사람이 없습니다."
+                </p>
+            </div>
+
+            <p>37세 이상 미혼 남성의 70% 이상이 <span class="highlight">사회적 고립감</span>을 호소합니다:</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>친구의 부재</h3>
+                    <p>학창시절 친구들은 결혼하고 육아에 바쁩니다</p>
+                </div>
+                <div class="card">
+                    <h3>동료의 한계</h3>
+                    <p>직장 동료와는 진정한 속마음을 나누기 어렵습니다</p>
+                </div>
+                <div class="card">
+                    <h3>취미의 고립</h3>
+                    <p>혼자 즐기는 취미만 늘어갑니다 (넷플릭스, 게임, 유튜브)</p>
+                </div>
+                <div class="card">
+                    <h3>주말의 공허함</h3>
+                    <p>금요일 저녁부터 월요일 아침까지가 가장 외롭습니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">1.3 기존 솔루션의 한계</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>기존 솔루션</th>
+                            <th>문제점</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>소개팅 앱</strong></td>
+                            <td>외모 위주 평가, 젊은 층 중심, 가벼운 만남</td>
+                        </tr>
+                        <tr>
+                            <td><strong>결혼정보회사</strong></td>
+                            <td>스펙 매칭, 건조한 만남, 설렘의 부재</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PUA/픽업 강의</strong></td>
+                            <td>저급한 문화, 사회적 오명, 지속 불가능</td>
+                        </tr>
+                        <tr>
+                            <td><strong>취미 동호회</strong></td>
+                            <td>비효율적, 목적 불일치, 시간 낭비</td>
+                        </tr>
+                        <tr>
+                            <td><strong>혼술/혼밥 문화</strong></td>
+                            <td>고립 심화, 악순환</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 2: THE INSIGHT -->
+    <div class="banner">
+        <img src="images/transformation.jpg" alt="Transformation">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h2 class="playfair">The 37 Pivot Theory</h2>
+                <p>젊음이 사라진 것이 아닙니다.<br>무기가 교체된 것입니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="document" id="insight">
+        <div class="part-header">
+            <p class="part-number">PART 2</p>
+            <h1 class="part-title playfair">THE INSIGHT</h1>
+            <p class="part-subtitle">The 37 Pivot Theory</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">2.1 무기의 교체</h2>
+
+            <div class="quote-block dark">
+                <p>"젊음이 사라진 것이 아닙니다. 무기가 교체된 것입니다."</p>
+            </div>
+
+            <p>연애 시장은 크게 두 개의 리그로 나뉩니다:</p>
+
+            <div class="comparison">
+                <div class="comparison-box dim">
+                    <h3>YOUTH GAME (Under 35)</h3>
+                    <ul>
+                        <li><strong>승부 요소:</strong> 외모, 체력, 유행, 에너지</li>
+                        <li><strong>특징:</strong> 빠른 변화, 즉각적 반응, 표면적 매력</li>
+                        <li><strong>우위자:</strong> 젊은 남성</li>
+                    </ul>
+                </div>
+                <div class="comparison-box highlight-box">
+                    <h3>STATUS GAME (Over 37)</h3>
+                    <ul>
+                        <li><strong>승부 요소:</strong> 경제력, 사회적 지위, 여유, 취향, 품격</li>
+                        <li><strong>특징:</strong> 깊은 매력, 안정감, 지속적 관계</li>
+                        <li><strong>우위자:</strong> 성공한 중년 남성</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                <span class="highlight">문제는 대부분의 37세 이상 남성들이 여전히 Youth Game의 룰로 싸우고 있다는 것입니다.</span>
+            </p>
+            <p>20대처럼 옷을 입고, 20대처럼 말하고, 20대처럼 행동하려 합니다. 그래서 필패합니다.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">2.2 The Status Game Advantage</h2>
+
+            <p>37세 이상 남성이 가진 <span class="highlight">진짜 무기</span>를 제대로 활용한다면:</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>무기</th>
+                            <th>활용법</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>경제력</strong></td>
+                            <td>단순한 돈자랑이 아닌, 품격 있는 라이프스타일로 표현</td>
+                        </tr>
+                        <tr>
+                            <td><strong>경험</strong></td>
+                            <td>세상을 아는 남자의 여유와 깊이로 발현</td>
+                        </tr>
+                        <tr>
+                            <td><strong>안정감</strong></td>
+                            <td>흔들리지 않는 자신감과 리더십으로 구현</td>
+                        </tr>
+                        <tr>
+                            <td><strong>네트워크</strong></td>
+                            <td>매력적인 사교 서클의 중심이 됨</td>
+                        </tr>
+                        <tr>
+                            <td><strong>취향</strong></td>
+                            <td>위스키, 와인, 다이닝, 골프 등 고급 취미로 차별화</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">2.3 여성 심리의 진실</h2>
+
+            <p>여성은 본능적으로 <span class="highlight">'사회적 등급(Class)'</span>에 반응합니다.</p>
+
+            <ul>
+                <li>혼자 있는 남자보다 <span class="bold">매력적인 무리의 중심에 있는 남자</span></li>
+                <li>쫓아다니는 남자보다 <span class="bold">여유 있게 선택하는 남자</span></li>
+                <li>애쓰는 남자보다 <span class="bold">자연스럽게 빛나는 남자</span></li>
+            </ul>
+
+            <div class="quote-block">
+                <p>
+                    우리의 전략은 '사냥(Hunting)'이 아닙니다.<br>
+                    '매력적인 서클'에 여성이 자연스럽게 합류하고 싶게 만드는 것입니다.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 3: THE SOLUTION -->
+    <div class="document" id="solution">
+        <div class="part-header">
+            <p class="part-number">PART 3</p>
+            <h1 class="part-title playfair">THE SOLUTION</h1>
+            <p class="part-subtitle">The Royal System</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">3.1 Overview: 인바운드 매력 전략</h2>
+
+            <p>로열 소사이어티는 <span class="highlight">3단계 시스템</span>으로 운영됩니다:</p>
+
+            <div class="phase-cards">
+                <div class="phase-card">
+                    <span class="phase-number">01</span>
+                    <h3>THE ACADEMY</h3>
+                    <h4>개인 변화</h4>
+                    <p>외모, 화법, 태도의 총체적 환골탈태. 프리미엄 1:1 코칭.</p>
+                </div>
+                <div class="phase-card">
+                    <span class="phase-number">02</span>
+                    <h3>THE CIRCLE</h3>
+                    <h4>사교 클럽</h4>
+                    <p>검증된 남자들의 프라이빗 멤버십. 정기 모임과 이벤트.</p>
+                </div>
+                <div class="phase-card">
+                    <span class="phase-number">03</span>
+                    <h3>THE NETWORK</h3>
+                    <h4>비즈니스 확장</h4>
+                    <p>각 분야 전문가들의 네트워크. 사업 협업과 형제애.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 1: THE ACADEMY -->
+        <section class="section">
+            <h2 class="section-title">PHASE 1: THE ACADEMY</h2>
+            <p class="lead">"당신을 완전히 새로운 남자로 다시 태어나게 합니다."</p>
+
+            <h3 class="subsection-title subsection-title-gold">1. VISUAL DIRECTION (외적 변화)</h3>
+
+            <div class="quote-block dark">
+                <p>"첫인상은 0.3초 만에 결정됩니다."</p>
+            </div>
+
+            <!-- Visual Direction Images -->
+            <div class="image-row">
+                <div class="image-row-item">
+                    <img src="images/styling.jpg" alt="Styling Session">
+                    <div class="image-row-caption">프리미엄 스타일링 세션</div>
+                </div>
+                <div class="image-row-item">
+                    <img src="images/barbershop.jpg" alt="Barbershop">
+                    <div class="image-row-caption">그루밍 엑설런스</div>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Style Transformation</h3>
+                    <ul>
+                        <li>백화점/컨템포러리 브랜드 전문 스타일링 (Time, System, Solid Homme, ZEGNA)</li>
+                        <li>체형별 맞춤 핏 가이드</li>
+                        <li>시즌별 워드로브 큐레이션</li>
+                        <li>'아저씨'가 아닌 '성공한 남자'의 이미지 구축</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Grooming Excellence</h3>
+                    <ul>
+                        <li>프리미엄 바버샵 컨설팅</li>
+                        <li>헤어스타일, 눈썹, 피부관리 토탈 솔루션</li>
+                        <li>향수 선택 및 레이어링 가이드</li>
+                        <li>디테일이 만드는 품격</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Body Language</h3>
+                    <ul>
+                        <li>자세 교정 및 걸음걸이</li>
+                        <li>시선 처리와 표정 관리</li>
+                        <li>손동작과 제스처</li>
+                        <li>공간 활용법</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">2. INNER GAME (내적 변화)</h3>
+
+            <div class="quote-block dark">
+                <p>"진정한 매력은 안에서 나옵니다."</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Mindset Reconstruction</h3>
+                    <ul>
+                        <li>성공한 남자의 자기 확신 구축</li>
+                        <li>결핍이 아닌 풍요에서 오는 여유</li>
+                        <li>거절에 흔들리지 않는 멘탈리티</li>
+                        <li>'선택받는 자'가 아닌 '선택하는 자'의 프레임</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Communication Mastery</h3>
+                    <ul>
+                        <li>매력적인 스토리텔링 기법</li>
+                        <li>상대방을 사로잡는 대화의 리듬</li>
+                        <li>침묵의 힘과 여백의 미학</li>
+                        <li>유머와 위트의 적절한 사용</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Female Psychology Decoded</h3>
+                    <ul>
+                        <li>여성의 언어 해독법</li>
+                        <li>관심 신호(IOI) 포착 및 대응</li>
+                        <li>적절한 푸시-풀 전략</li>
+                        <li>관계 발전의 자연스러운 설계</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">3. FIELD MASTERY (실전 훈련)</h3>
+
+            <div class="quote-block dark">
+                <p>"이론은 현장에서 완성됩니다."</p>
+            </div>
+
+            <!-- Field Mastery Image -->
+            <div class="full-image-section">
+                <img src="images/hotel-bar.jpg" alt="Hotel Bar Training">
+                <div class="full-image-caption">프리미엄 호텔 바에서의 실전 훈련</div>
+            </div>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h4>High-Social Venue Training</h4>
+                    <ul>
+                        <li>청담/이태원/한남동 프리미엄 라운지</li>
+                        <li>호텔 바 (Four Seasons, Signiel, The Shilla)</li>
+                        <li>파인다이닝 레스토랑</li>
+                        <li>프라이빗 와인바 및 위스키 바</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Real Situation Practice</h4>
+                    <ul>
+                        <li>자연스러운 어프로치 실습</li>
+                        <li>대화 유지 및 발전 훈련</li>
+                        <li>연락처 교환의 기술</li>
+                        <li>후속 만남 설계</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="value-card" style="margin-top: 40px;">
+                <h4>코칭 구성</h4>
+                <ul>
+                    <li>1:1 또는 1:2 밀착 코칭 (총 10회)</li>
+                    <li>회당 3시간 (이론 1시간 + 실전 2시간)</li>
+                    <li>24시간 카카오톡 피드백 시스템</li>
+                    <li>졸업 후 6개월 팔로업 지원</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PHASE 2: THE CIRCLE -->
+        <section class="section">
+            <h2 class="section-title">PHASE 2: THE CIRCLE</h2>
+            <p class="lead">"혼자일 때보다 함께일 때 더 빛나는 개츠비 효과"</p>
+
+            <div class="quote-block">
+                <p>
+                    개츠비는 혼자서는 그저 부유한 남자였습니다.<br>
+                    하지만 화려한 파티의 중심에 서는 순간,<br>
+                    모든 이의 시선과 동경을 한 몸에 받았습니다.<br><br>
+                    로열 소사이어티 멤버는<br>
+                    매력적인 남자들의 모임 한가운데 있음으로써<br>
+                    개인의 매력이 기하급수적으로 증폭됩니다.
+                </p>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">정기 액티비티</h3>
+
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <img src="images/whiskey-bar.jpg" alt="Whiskey Night">
+                    <div class="activity-card-content">
+                        <h3>WHISKEY & CIGAR NIGHT</h3>
+                        <h4>"신사들의 밤"</h4>
+                        <ul>
+                            <li>장소: 프리미엄 시가 라운지 / 호텔 바</li>
+                            <li>내용: 싱글 몰트 테이스팅, 비즈니스 인사이트 공유</li>
+                            <li>빈도: 월 2회</li>
+                            <li>분위기: 클래식하고 깊은 대화</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="images/fine-dining.jpg" alt="Wine & Dine">
+                    <div class="activity-card-content">
+                        <h3>WINE & DINE</h3>
+                        <h4>"미식의 향연"</h4>
+                        <ul>
+                            <li>장소: 미슐랭 레스토랑, 프렌치/이탈리안 파인다이닝</li>
+                            <li>내용: 와인 페어링 디너, 음식과 삶에 대한 담론</li>
+                            <li>빈도: 월 1회</li>
+                            <li>분위기: 세련되고 품격있는</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="images/golf.jpg" alt="Golf">
+                    <div class="activity-card-content">
+                        <h3>GOLF & NETWORK</h3>
+                        <h4>"필드 위의 신사 협정"</h4>
+                        <ul>
+                            <li>장소: 수도권/경기권 프리미엄 골프장</li>
+                            <li>내용: 18홀 라운딩, 식사 및 네트워킹</li>
+                            <li>빈도: 월 1~2회</li>
+                            <li>분위기: 건강하고 활동적인</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="images/art-gallery.jpg" alt="Art & Culture">
+                    <div class="activity-card-content">
+                        <h3>ART & CULTURE</h3>
+                        <h4>"문화 큐레이션"</h4>
+                        <ul>
+                            <li>프리미엄 전시회 도슨트 투어</li>
+                            <li>뮤지컬/오페라 VIP석 관람</li>
+                            <li>아트페어 프리뷰 투어</li>
+                            <li>인스타그래머블 핫플레이스 탐방</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">시즌별 스페셜 이벤트</h3>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌸</div>
+                    <h3>SPRING: 승마 클래스</h3>
+                    <ul>
+                        <li>용인/일산 승마 클럽</li>
+                        <li>기초 승마 교육 + 브런치</li>
+                        <li>검증된 여성 게스트 초대</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏖️</div>
+                    <h3>SUMMER: 풀파티 & 워터 리트릿</h3>
+                    <ul>
+                        <li>한남동 프라이빗 풀 파티</li>
+                        <li>부산 해운대 요트 파티</li>
+                        <li>워터파크 프라이빗 이벤트</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🍂</div>
+                    <h3>AUTUMN: 글램핑 & 캠핑</h3>
+                    <ul>
+                        <li>가평/양평 프리미엄 글램핑</li>
+                        <li>바베큐 & 불멍 나이트</li>
+                        <li>가을 하늘 아래 깊은 대화</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">❄️</div>
+                    <h3>WINTER: 스키 리조트</h3>
+                    <ul>
+                        <li>용평/휘닉스 스키 트립</li>
+                        <li>슬로프 + 에프터 스키 파티</li>
+                        <li>겨울 로맨스의 시작</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Seasons Image Grid -->
+            <div class="seasons-grid">
+                <div class="season-item">
+                    <img src="images/horseback.jpg" alt="Spring Horseback Riding">
+                    <div class="season-label">SPRING</div>
+                </div>
+                <div class="season-item">
+                    <img src="images/pool-party.jpg" alt="Summer Pool Party">
+                    <div class="season-label">SUMMER</div>
+                </div>
+                <div class="season-item">
+                    <img src="images/glamping.jpg" alt="Autumn Glamping">
+                    <div class="season-label">AUTUMN</div>
+                </div>
+                <div class="season-item">
+                    <img src="images/ski.jpg" alt="Winter Ski">
+                    <div class="season-label">WINTER</div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">프라이빗 파티: THE ROYAL NIGHT</h3>
+            <p><em>"엄선된 게스트들만을 위한 밤"</em></p>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h4>파티 구성</h4>
+                    <ul>
+                        <li><strong>장소:</strong> 청담/한남 프라이빗 라운지, 요트, 풀빌라</li>
+                        <li><strong>구성:</strong> 로열 멤버 + 검증된 여성 게스트</li>
+                        <li><strong>분위기:</strong> 세련되고 자연스러운</li>
+                        <li><strong>특징:</strong> 강제적 매칭 없음, 자연스러운 교류</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>게스트 선발 기준</h4>
+                    <ul>
+                        <li>외모와 분위기</li>
+                        <li>직업과 교양</li>
+                        <li>기존 멤버의 추천</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rooftop Party Image -->
+            <div class="full-image-section">
+                <img src="images/rooftop-party.jpg" alt="Rooftop Party">
+                <div class="full-image-caption">THE ROYAL NIGHT - 서울 루프탑에서의 프리미엄 네트워킹</div>
+            </div>
+        </section>
+
+        <!-- PHASE 3: THE NETWORK -->
+        <section class="section">
+            <h2 class="section-title">PHASE 3: THE NETWORK</h2>
+            <p class="lead">"함께하면 더 멀리 갑니다."</p>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h4>💼 STARTUP INCUBATION</h4>
+                    <p>로열 소사이어티 멤버들은 각자의 분야에서 검증된 전문가들입니다.</p>
+                    <p><strong>우리는 함께:</strong></p>
+                    <ul>
+                        <li>아이디어 브레인스토밍</li>
+                        <li>린 스타트업 방식의 빠른 검증</li>
+                        <li>웹/앱 프로토타입 개발</li>
+                        <li>초기 투자 및 공동 창업</li>
+                    </ul>
+                    <p><strong>예상 시너지:</strong></p>
+                    <ul>
+                        <li>IT 전문가 × 마케팅 전문가 × 금융 전문가</li>
+                        <li>아이디어맨 × 개발자 × 사업 운영가</li>
+                        <li>투자자 × 창업가 × 기술자</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>🤝 BROTHERHOOD</h4>
+                    <div class="quote-block dark" style="margin-top: 0;">
+                        <p>"이 세상에서 가장 든든한 건 믿을 수 있는 형제입니다."</p>
+                    </div>
+                    <ul>
+                        <li>비즈니스 기회 공유</li>
+                        <li>직업적 조언과 멘토링</li>
+                        <li>위기 상황에서의 상호 지원</li>
+                        <li>평생 지속되는 인적 네트워크</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Network Startup Image -->
+            <div class="network-image">
+                <img src="images/startup.jpg" alt="Startup Collaboration">
+                <div class="network-image-overlay">
+                    <div class="network-image-text">
+                        <h3 class="playfair">FROM NETWORK TO VENTURES</h3>
+                        <p>함께 만들어가는 새로운 기회</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Brotherhood Banner -->
+    <div class="banner">
+        <img src="images/brotherhood.jpg" alt="Brotherhood">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h2 class="playfair">Brotherhood</h2>
+                <p>네가 어려울 때 내가 있고,<br>내가 어려울 때 네가 있다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 4: BRAND IDENTITY -->
+    <div class="document">
+        <div class="part-header">
+            <p class="part-number">PART 4</p>
+            <h1 class="part-title playfair">BRAND IDENTITY</h1>
+            <p class="part-subtitle">로열 소사이어티의 정체성</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">4.1 Core Slogan</h2>
+
+            <div style="text-align: center; padding: 60px 0;">
+                <h2 style="font-size: 3rem; color: var(--gold); margin-bottom: 30px;" class="playfair">
+                    "37세, 게임의 룰이 바뀝니다."
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--lighter-gray); max-width: 600px; margin: 0 auto; line-height: 2;">
+                    젊음으로 승부하던 시절은 끝났습니다.<br>
+                    이제 당신이 가진 <span class="highlight">'성공'</span>과 <span class="highlight">'여유'</span>라는 무기로<br>
+                    압도적인 격차를 보여줄 시간입니다.<br><br>
+                    소년들의 놀이터에서 나와,<br>
+                    진짜 남자들의 <span class="bold">로열 소사이어티</span>로 입장하십시오.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4.2 Mission Statement</h2>
+
+            <div class="quote-block">
+                <p>
+                    "대한민국 3040 남성의 잃어버린 전성기를 복원하고,<br>
+                    품격 있는 관계와 라이프스타일을 설계한다."
+                </p>
+            </div>
+
+            <p>우리는 단순히 연애를 가르치지 않습니다. 우리는 <span class="highlight">인생 전체를 업그레이드</span>합니다.</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4.3 Core Values</h2>
+
+            <div class="value-card">
+                <h4>🤝 BROTHERHOOD (형제애)</h4>
+                <p>고립된 3040 남성들이 서로 믿고 의지할 수 있는 소셜 서클을 형성합니다.</p>
+                <p class="quote">"네가 어려울 때 내가 있고, 내가 어려울 때 네가 있다."</p>
+            </div>
+
+            <div class="value-card">
+                <h4>🔄 TRANSFORMATION (변화)</h4>
+                <p>단순 기술 전수가 아닌, 외모·화법·태도의 총체적 환골탈태를 추구합니다.</p>
+                <p class="quote">"밖에서 들어온 사람과 나가는 사람이 다릅니다."</p>
+            </div>
+
+            <div class="value-card">
+                <h4>👔 HIGH-SOCIAL (상류 문화)</h4>
+                <p>저급한 헌팅이 아닌, 럭셔리 라이프스타일을 함께 향유합니다.</p>
+                <p class="quote">"우리는 사냥꾼이 아닙니다. 우리는 신사입니다."</p>
+            </div>
+
+            <div class="value-card">
+                <h4>💡 PRAGMATISM (실용주의)</h4>
+                <p>재벌만 할 수 있는 소비가 아닌, 접근 가능한 럭셔리(Accessible Luxury)를 지향합니다.</p>
+                <p class="quote">"연봉 8천으로도 충분히 품격 있는 삶을 설계할 수 있습니다."</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4.4 Brand Personality</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>속성</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Sophisticated</strong></td><td>세련되고 교양있는</td></tr>
+                        <tr><td><strong>Confident</strong></td><td>자신감 있고 당당한</td></tr>
+                        <tr><td><strong>Exclusive</strong></td><td>누구나 들어올 수 없는</td></tr>
+                        <tr><td><strong>Warm</strong></td><td>따뜻하고 형제애가 있는</td></tr>
+                        <tr><td><strong>Pragmatic</strong></td><td>실용적이고 현실적인</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4.5 Language & Tone</h2>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h4>❌ 우리가 사용하지 않는 표현</h4>
+                    <ul>
+                        <li>런, 홈런, 방생 (저급한 은어)</li>
+                        <li>여자 꼬시기, 헌팅</li>
+                        <li>PUA, 픽업아티스트</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>✅ 우리가 사용하는 표현</h4>
+                    <ul>
+                        <li>소셜링, 교감, 매칭, 애프터</li>
+                        <li>관계 설계, 매력 개발</li>
+                        <li>라이프스타일 디자인</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 5: TARGET AUDIENCE -->
+    <div class="document" id="target">
+        <div class="part-header">
+            <p class="part-number">PART 5</p>
+            <h1 class="part-title playfair">TARGET AUDIENCE</h1>
+            <p class="part-subtitle">우리가 찾는 사람</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">5.1 Primary Target</h2>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>인구통계</h3>
+                    <ul>
+                        <li><strong>연령:</strong> 37세 ~ 47세</li>
+                        <li><strong>성별:</strong> 남성</li>
+                        <li><strong>결혼 상태:</strong> 미혼 (돌싱 포함)</li>
+                        <li><strong>거주 지역:</strong> 수도권 중심</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>경제 수준</h3>
+                    <ul>
+                        <li><strong>연봉:</strong> 8,000만 원 내외 이상</li>
+                        <li><strong>직업군:</strong> 대기업 과장/부장급, 전문직, 중견기업 임원, 개인 사업자</li>
+                        <li><strong>자산:</strong> 1억 이상 보유</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>심리적 특성</h3>
+                    <ul>
+                        <li>사회적 성공에 대한 자부심이 있음</li>
+                        <li>연애/관계에 대한 갈증이 있음</li>
+                        <li>자기 계발에 투자할 의향이 있음</li>
+                        <li>품격 있는 라이프스타일을 추구함</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">5.2 Pain Points</h2>
+
+            <div class="quote-block">
+                <p>
+                    "나도 사회에선 꽤 괜찮은 놈인데..."<br><br>
+                    회사에선 인정받습니다. 후배들이 따릅니다. 연봉도 나쁘지 않습니다.<br><br>
+                    그런데 왜 연애 시장에서는 '늙은 아저씨' 취급을 받는 걸까요?<br>
+                    왜 20대 초반 때처럼 가슴 뛰는 연애를 할 수 없는 걸까요?<br>
+                    왜 주말이 되면 만날 사람 하나 없이 넷플릭스만 보고 있는 걸까요?
+                </p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>페인 포인트</th>
+                            <th>상세 설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>고립감</strong></td><td>사회적 성공은 거뒀으나 진정한 친구가 없음</td></tr>
+                        <tr><td><strong>괴리감</strong></td><td>직장에서의 자아 vs 연애 시장에서의 평가 충돌</td></tr>
+                        <tr><td><strong>염증</strong></td><td>소개팅 앱과 결혼정보회사에 지침</td></tr>
+                        <tr><td><strong>갈증</strong></td><td>여전히 설레는 연애를 갈망함</td></tr>
+                        <tr><td><strong>방향 상실</strong></td><td>어떻게 해야 할지 모르겠음</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">5.3 What They Want</h2>
+
+            <ul class="check-list">
+                <li>다시 한번 가슴 뛰는 연애를 하고 싶다</li>
+                <li>매력적인 여성들과 자연스럽게 만나고 싶다</li>
+                <li>함께 어울릴 수 있는 같은 수준의 친구들이 있었으면 좋겠다</li>
+                <li>주말이 기다려지는 삶을 살고 싶다</li>
+                <li>내 수준에 맞는 품격 있는 라이프스타일을 즐기고 싶다</li>
+                <li>혼자가 아니라는 소속감을 느끼고 싶다</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">5.4 Persona: 김재현 (가상의 타겟)</h2>
+
+            <div class="persona-box">
+                <div class="persona-header">
+                    <div class="persona-avatar" style="background: url('images/persona.jpg') center top/cover; border-radius: 0;"></div>
+                    <div class="persona-info">
+                        <h3>김재현 (39세)</h3>
+                        <p><strong>직업:</strong> 대기업 과장 (IT기업 8년차)</p>
+                        <p><strong>연봉:</strong> 9,200만 원</p>
+                        <p><strong>거주지:</strong> 서울 마포구 (전용 84㎡ 아파트)</p>
+                        <p><strong>차량:</strong> 제네시스 G70</p>
+                    </div>
+                </div>
+
+                <div class="two-columns">
+                    <div class="column">
+                        <h4>일상</h4>
+                        <ul>
+                            <li>평일: 출근 → 업무 → 퇴근 → 집에서 넷플릭스/유튜브</li>
+                            <li>주말: 카페에서 책 읽기, 혼자 영화 보기, 가끔 골프 연습장</li>
+                        </ul>
+                        <h4>연애 이력</h4>
+                        <ul>
+                            <li>마지막 연애: 3년 전 (2년 사귐, 결별)</li>
+                            <li>소개팅 앱: 여러 번 시도했으나 대화가 안 됨</li>
+                            <li>결혼정보회사: 가입 고민 중이나 거부감 있음</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>고민</h4>
+                        <div class="quote-block dark" style="margin: 0;">
+                            <p style="font-size: 1rem;">
+                                "회사에선 나름 인정받는데, 왜 퇴근하면 이렇게 외로울까.
+                                같이 술 한잔 할 친구도 없고, 소개팅은 맨날 실패하고.
+                                30대 초반엔 괜찮았는데, 언제부터 이렇게 됐지?
+                                결혼정보회사는 너무 건조하고... 그냥 자연스럽게 만나고 싶은데."
+                            </p>
+                        </div>
+                        <h4 style="margin-top: 20px;">로열 소사이어티는:</h4>
+                        <ul>
+                            <li>같은 수준의 형들과 어울릴 수 있는 곳</li>
+                            <li>매력을 다시 끌어올릴 수 있는 곳</li>
+                            <li>자연스럽게 여성을 만날 수 있는 곳</li>
+                            <li>주말이 기다려지는 삶을 만들어주는 곳</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 6: BUSINESS MODEL -->
+    <div class="document" id="business">
+        <div class="part-header">
+            <p class="part-number">PART 6</p>
+            <h1 class="part-title playfair">BUSINESS MODEL</h1>
+            <p class="part-subtitle">수익 구조</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">6.1 Revenue Streams</h2>
+
+            <div class="code-block">┌──────────────────────────────────────────────────────────────┐
+│                     REVENUE MODEL                            │
+├──────────────────────────────────────────────────────────────┤
+│                                                              │
+│   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐       │
+│   │  COACHING   │   │ MEMBERSHIP  │   │   EVENTS    │       │
+│   │   (1회성)   │   │   (정기)    │   │  (티켓제)   │       │
+│   │             │   │             │   │             │       │
+│   │  700만 원   │   │ 200~300만 원│   │  건당 과금  │       │
+│   │   /1인      │   │    /연      │   │             │       │
+│   └─────────────┘   └─────────────┘   └─────────────┘       │
+│         │                 │                 │                │
+│         ▼                 ▼                 ▼                │
+│   ┌─────────────────────────────────────────────────┐       │
+│   │              ADDITIONAL REVENUE                  │       │
+│   ├─────────────────────────────────────────────────┤       │
+│   │  • 스타일 구독 (월정액)                          │       │
+│   │  • 프리미엄 1:1 멘토링                           │       │
+│   │  • 파트너십 수수료                               │       │
+│   └─────────────────────────────────────────────────┘       │
+│                                                              │
+└──────────────────────────────────────────────────────────────┘</div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">6.2 Detailed Pricing</h2>
+
+            <h3 class="subsection-title subsection-title-gold">THE ACADEMY (하이엔드 코칭)</h3>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>STANDARD</h3>
+                        <p class="price">700<span>만원</span></p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul>
+                            <li>10회 밀착 코칭</li>
+                            <li>백화점 스타일링 동행</li>
+                            <li>바버샵/그루밍 컨설팅</li>
+                            <li>24시간 카톡 피드백</li>
+                            <li>6개월 팔로업</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>PREMIUM</h3>
+                        <p class="price">1,000<span>만원</span></p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul>
+                            <li>15회 밀착 코칭</li>
+                            <li>토탈 스타일링 패키지</li>
+                            <li>VIP 이벤트 3회 초대</li>
+                            <li>프라이빗 파티 참석권</li>
+                            <li>평생 커뮤니티 액세스</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>ULTIMATE</h3>
+                        <p class="price">1,500<span>만원</span></p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul>
+                            <li>20회 밀착 코칭</li>
+                            <li>토탈 메이크오버</li>
+                            <li>연간 멤버십 포함</li>
+                            <li>모든 이벤트 무료</li>
+                            <li>1:1 VIP 케어</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">THE CIRCLE (멤버십)</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>등급</th>
+                            <th>혜택</th>
+                            <th>연회비</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ASSOCIATE</strong></td>
+                            <td>정기 모임 참석, 이벤트 할인</td>
+                            <td>200만 원</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MEMBER</strong></td>
+                            <td>전체 이벤트 참석, 파티 초대, 네트워킹 우선권</td>
+                            <td>300만 원</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FOUNDING MEMBER</strong></td>
+                            <td>모든 혜택 + 창립 멤버 특전 + 평생 할인</td>
+                            <td>500만 원 (초기 한정)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="subsection-title subsection-title-gold">EVENTS (이벤트)</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이벤트</th>
+                            <th>예상 가격</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Whiskey Night</td><td>15만 원</td></tr>
+                        <tr><td>Wine & Dine</td><td>20만 원</td></tr>
+                        <tr><td>Golf Rounding</td><td>30만 원 (그린피 포함)</td></tr>
+                        <tr><td>Private Party</td><td>25만 원</td></tr>
+                        <tr><td>시즌 이벤트 (스키/풀파티 등)</td><td>50~100만 원</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">6.3 Financial Projection (1년차)</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>수량</th>
+                            <th>단가</th>
+                            <th>연 매출</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>코칭 프로그램</td>
+                            <td>월 4명 × 12개월</td>
+                            <td>700만 원</td>
+                            <td>3.36억 원</td>
+                        </tr>
+                        <tr>
+                            <td>연간 멤버십</td>
+                            <td>50명</td>
+                            <td>250만 원 (평균)</td>
+                            <td>1.25억 원</td>
+                        </tr>
+                        <tr>
+                            <td>이벤트 수익</td>
+                            <td>월 3회 × 20명 × 12개월</td>
+                            <td>20만 원 (평균)</td>
+                            <td>1.44억 원</td>
+                        </tr>
+                        <tr>
+                            <td>부가 수익</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>0.5억 원</td>
+                        </tr>
+                        <tr style="background: rgba(201, 169, 98, 0.1);">
+                            <td><strong>TOTAL</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong style="color: var(--gold);">6.55억 원</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 7: MARKETING STRATEGY -->
+    <div class="document">
+        <div class="part-header">
+            <p class="part-number">PART 7</p>
+            <h1 class="part-title playfair">MARKETING STRATEGY</h1>
+            <p class="part-subtitle">Go-to-Market 전략</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">7.1 채널 전략: Hybrid Model</h2>
+
+            <div class="comparison">
+                <div class="comparison-box">
+                    <h3 style="color: var(--gold);">네이버 카페</h3>
+                    <p><strong>커뮤니티 & 트래픽</strong></p>
+                    <ul>
+                        <li>무료 콘텐츠</li>
+                        <li>후기 및 경험 공유</li>
+                        <li>커뮤니티 형성</li>
+                        <li>검색 유입</li>
+                    </ul>
+                    <h4 style="color: var(--gold); margin-top: 20px;">콘텐츠 예시</h4>
+                    <ul>
+                        <li>[칼럼] 37세, 연애 시장에서 다시 빛나는 법</li>
+                        <li>[후기] 3개월 만에 달라진 내 모습</li>
+                        <li>[정보] 청담 라운지 가이드</li>
+                        <li>[Q&A] 소개팅 첫 만남 레스토랑</li>
+                    </ul>
+                </div>
+                <div class="comparison-box highlight-box">
+                    <h3>공식 웹사이트</h3>
+                    <p><strong>브랜딩 & 전환</strong></p>
+                    <ul>
+                        <li>프리미엄 이미지</li>
+                        <li>상세 프로그램 안내</li>
+                        <li>결제 및 상담 신청</li>
+                        <li>신뢰도 구축</li>
+                    </ul>
+                    <h4 style="color: var(--gold); margin-top: 20px;">핵심 요소</h4>
+                    <ul>
+                        <li>압도적인 비주얼 퀄리티</li>
+                        <li>성공 사례 및 멤버 인터뷰</li>
+                        <li>명확한 가치 제안</li>
+                        <li>간편한 상담 신청 프로세스</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">7.2 콘텐츠 마케팅</h2>
+
+            <h3 class="subsection-title subsection-title-gold">YouTube / Instagram</h3>
+            <p><em>컨셉: 디렉터 Royd의 라이프스타일</em></p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>콘텐츠 유형</th>
+                            <th>예시</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>VLOG</strong></td><td>청담 라운지에서의 하루, 골프 라운딩, 파티 현장</td></tr>
+                        <tr><td><strong>TIPS</strong></td><td>첫 데이트 레스토랑 고르는 법, 위스키 기초 지식</td></tr>
+                        <tr><td><strong>INTERVIEW</strong></td><td>멤버 인터뷰 - "로열 소사이어티가 내 인생을 바꿨다"</td></tr>
+                        <tr><td><strong>TRANSFORMATION</strong></td><td>Before/After 변화 스토리</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>톤 & 매너:</strong> 과장 없이 담백하게 / 고급스럽지만 접근 가능한 / 진정성 있는 스토리텔링</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">7.3 입소문 마케팅</h2>
+
+            <div class="quote-block dark">
+                <p>"최고의 마케팅은 만족한 고객입니다."</p>
+            </div>
+
+            <ul>
+                <li>수료생 추천 인센티브 제도</li>
+                <li>멤버 초대 보너스 프로그램</li>
+                <li>성공 커플 탄생 시 케이스 스터디 제작</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- PART 8: OPERATIONS -->
+    <div class="document">
+        <div class="part-header">
+            <p class="part-number">PART 8</p>
+            <h1 class="part-title playfair">OPERATIONS</h1>
+            <p class="part-subtitle">운영 원칙</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">8.1 Quality Control - Member Filtering</h2>
+
+            <div class="quote-block dark">
+                <p>"돈만 낸다고 받지 않습니다."</p>
+            </div>
+
+            <div class="two-columns">
+                <div class="column">
+                    <h4>입회 프로세스</h4>
+                    <ol>
+                        <li>온라인 신청서 작성</li>
+                        <li>전화 인터뷰 (15분)</li>
+                        <li>대면 미팅 (필요시)</li>
+                        <li>최종 승인</li>
+                    </ol>
+                    <h4>평가 기준</h4>
+                    <ul>
+                        <li>경제적 여력 (연봉 8천 이상)</li>
+                        <li>직업적 안정성</li>
+                        <li>인성 및 매너</li>
+                        <li>기존 멤버들과의 조화</li>
+                        <li>변화에 대한 의지</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>거절 사유</h4>
+                    <ul>
+                        <li>비현실적 기대 (마술 같은 결과 요구)</li>
+                        <li>여성 비하적 태도</li>
+                        <li>커뮤니티 분위기를 해칠 우려</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">8.2 Community Guidelines - The Gentleman's Code</h2>
+
+            <div class="code-block" style="font-family: 'Noto Sans KR', sans-serif;">1. 품격있는 언어를 사용합니다
+   - 저급한 은어, 여성 비하 표현 금지
+
+2. 서로를 존중합니다
+   - 비난보다 격려, 경쟁보다 협력
+
+3. 프라이버시를 보호합니다
+   - 멤버의 신상 정보 외부 유출 금지
+
+4. 적극적으로 참여합니다
+   - 받기만 하지 않고 기여하는 문화
+
+5. 성장을 추구합니다
+   - 현재에 안주하지 않고 끊임없이 발전</div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">8.3 Risk Management</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>리스크</th>
+                            <th>대응 방안</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>부정적 언론 보도</strong></td><td>PUA와의 명확한 차별화, 품격있는 브랜딩</td></tr>
+                        <tr><td><strong>멤버 간 분쟁</strong></td><td>명확한 가이드라인, 중재 시스템</td></tr>
+                        <tr><td><strong>여성 게스트 품질 관리</strong></td><td>엄격한 스크리닝, 기존 멤버 추천 우선</td></tr>
+                        <tr><td><strong>매출 변동성</strong></td><td>멤버십 기반 고정 수익 확보</td></tr>
+                        <tr><td><strong>창업자 의존도</strong></td><td>시스템화, 코치 양성 프로그램</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 9: TEAM & LEADERSHIP -->
+    <div class="document">
+        <div class="part-header">
+            <p class="part-number">PART 9</p>
+            <h1 class="part-title playfair">TEAM & LEADERSHIP</h1>
+            <p class="part-subtitle">디렉터 Royd</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">9.1 Founder's Profile</h2>
+
+            <div style="text-align: center; padding: 40px 0;">
+                <h2 style="font-size: 2.5rem; color: var(--gold); letter-spacing: 10px; margin-bottom: 20px;" class="playfair">ROYD</h2>
+                <p style="color: var(--light-gray); font-size: 1.1rem; margin-bottom: 30px;">3040 남자의 연애와 라이프스타일을 재설계하는 디렉터</p>
+            </div>
+
+            <div class="quote-block">
+                <p>
+                    뻔한 연애 기술이 아닌,<br>
+                    당신의 매력을 극대화하여 압도적인 격차를 만듭니다.<br><br>
+                    37세, 이제 시행착오는 끝났습니다.<br>
+                    당신의 가치를 이곳에서 증명하십시오.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">9.2 Founder's Edge</h2>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>실전 경험</h3>
+                    <ul>
+                        <li>수년간의 필드 경험에서 축적된 실전 프레임</li>
+                        <li>수백 명의 남성을 변화시킨 코칭 이력</li>
+                        <li>직접 검증된 방법론과 전략</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>기술 역량</h3>
+                    <ul>
+                        <li>웹/앱 자체 개발 능력</li>
+                        <li>최신 AI 툴 활용 역량</li>
+                        <li>테크 기반 효율적 운영</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>커뮤니케이션</h3>
+                    <ul>
+                        <li>강력한 스토리텔링 능력</li>
+                        <li>설득력 있는 프레젠테이션</li>
+                        <li>진정성 있는 멘토링</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">9.3 Team Vision</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <h4>Phase 1</h4>
+                        <span>Solo Operation</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>디렉터 Royd 단독 운영</li>
+                            <li>코칭 및 이벤트 직접 진행</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <h4>Phase 2</h4>
+                        <span>Core Team</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>어시스턴트 코치 1~2명</li>
+                            <li>운영 매니저 1명</li>
+                            <li>콘텐츠 크리에이터 1명</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <h4>Phase 3</h4>
+                        <span>Expansion</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>복수의 시니어 코치</li>
+                            <li>지역별 챕터 리더</li>
+                            <li>전문 운영팀</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 10: FUTURE VISION -->
+    <div class="document">
+        <div class="part-header">
+            <p class="part-number">PART 10</p>
+            <h1 class="part-title playfair">FUTURE VISION</h1>
+            <p class="part-subtitle">확장 로드맵</p>
+        </div>
+
+        <section class="section">
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Year 1: Foundation</h3>
+                    <p><strong>목표: 브랜드 확립 및 코어 커뮤니티 구축</strong></p>
+                    <ul>
+                        <li>코칭 프로그램 런칭 및 최적화</li>
+                        <li>50명 이상의 유료 멤버 확보</li>
+                        <li>네이버 카페 1만 회원 돌파</li>
+                        <li>월간 정기 이벤트 시스템 안착</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Year 2: Growth</h3>
+                    <p><strong>목표: 규모 확장 및 시스템화</strong></p>
+                    <ul>
+                        <li>코치 양성 프로그램 런칭</li>
+                        <li>지방 대도시 챕터 오픈 (부산, 대구)</li>
+                        <li>공식 앱 개발 착수</li>
+                        <li>연매출 10억 돌파</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Year 3+: Platform</h3>
+                    <p><strong>목표: 플랫폼 비즈니스로 진화</strong></p>
+                    <ul>
+                        <li>검증된 남성 데이터 기반 매칭 플랫폼</li>
+                        <li>AI 남성 토탈 케어 비서 앱</li>
+                        <li>라이프스타일 브랜드 런칭</li>
+                        <li>아시아 시장 진출</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vision Image: Yacht Lifestyle -->
+            <div class="full-image-section">
+                <img src="images/yacht.jpg" alt="Future Vision">
+                <div class="full-image-caption">BEYOND BOUNDARIES - 새로운 가능성으로의 항해</div>
+            </div>
+
+            <div class="quote-block" style="margin-top: 60px;">
+                <p>
+                    "모든 대한민국 3040 남성이<br>
+                    자신의 가치를 인정받고,<br>
+                    품격있는 관계를 누리며,<br>
+                    형제들과 함께 인생을 즐기는 세상"<br><br>
+                    로열 소사이어티는 그 여정의 시작입니다.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PART 11: WHY JOIN US -->
+    <div class="banner">
+        <img src="images/private-party.jpg" alt="Join Us">
+        <div class="banner-overlay">
+            <div class="banner-content">
+                <h2 class="playfair">Why Join Us?</h2>
+                <p>당신의 재능과 열정을 로열 소사이어티와 함께 나누고 싶다면</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="document" id="join">
+        <div class="part-header">
+            <p class="part-number">PART 11</p>
+            <h1 class="part-title playfair">WHY JOIN US</h1>
+            <p class="part-subtitle">팀 합류 안내</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">11.1 우리가 찾는 사람</h2>
+
+            <ul class="check-list">
+                <li>3040 남성의 고민에 진심으로 공감하는 사람</li>
+                <li>고급 라이프스타일에 대한 이해와 취향이 있는 사람</li>
+                <li>사람을 변화시키는 일에서 보람을 느끼는 사람</li>
+                <li>스타트업 마인드로 빠르게 실행하는 사람</li>
+                <li>장기적인 비전을 공유할 수 있는 사람</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">11.2 합류의 이점</h2>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>1. 성장하는 시장</h3>
+                    <ul>
+                        <li>3040 미혼 남성 인구 증가</li>
+                        <li>자기 계발 시장 확대</li>
+                        <li>프리미엄 서비스 수요 증가</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>2. 차별화된 포지셔닝</h3>
+                    <ul>
+                        <li>기존 PUA/결정사와 완전히 다른 접근</li>
+                        <li>블루오션 시장 선점 기회</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>3. 의미있는 일</h3>
+                    <ul>
+                        <li>고립된 남성들에게 연결을 제공</li>
+                        <li>실제로 삶이 바뀌는 것을 목격</li>
+                        <li>형제애로 연결된 커뮤니티의 일원</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>4. 성장 기회</h3>
+                    <ul>
+                        <li>초기 멤버로서의 지분/성과 보상</li>
+                        <li>개인 브랜딩 기회</li>
+                        <li>네트워크 확장</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">11.3 현재 모집 포지션</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>포지션</th>
+                            <th>역할</th>
+                            <th>요건</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>공동창업자</strong></td>
+                            <td>사업 전략 및 운영 파트너</td>
+                            <td>스타트업 경험, 3040 남성 타겟 이해</td>
+                        </tr>
+                        <tr>
+                            <td><strong>어시스턴트 코치</strong></td>
+                            <td>코칭 프로그램 보조</td>
+                            <td>연애/사회성 코칭 경험, 호감형 외모</td>
+                        </tr>
+                        <tr>
+                            <td><strong>콘텐츠 크리에이터</strong></td>
+                            <td>영상/이미지 콘텐츠 제작</td>
+                            <td>유튜브/인스타 운영 경험, 편집 스킬</td>
+                        </tr>
+                        <tr>
+                            <td><strong>커뮤니티 매니저</strong></td>
+                            <td>카페/멤버 관리</td>
+                            <td>CS 경험, 친화력, 글쓰기 능력</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- APPENDIX -->
+    <div class="document">
+        <div class="part-header">
+            <p class="part-number">APPENDIX</p>
+            <h1 class="part-title playfair">FAQ & GLOSSARY</h1>
+            <p class="part-subtitle">자주 묻는 질문 및 용어집</p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">A. FAQ</h2>
+
+            <div class="faq-item">
+                <p class="faq-question">Q. PUA와 뭐가 다른가요?</p>
+                <div class="faq-answer">
+                    <p>저급한 테크닉이 아닌 품격있는 매력 개발, 일회성 만남이 아닌 지속적인 관계 설계, 개인 플레이가 아닌 커뮤니티 기반 소셜링.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Q. 꼭 돈이 많아야 하나요?</p>
+                <div class="faq-answer">
+                    <p>재벌이 아니어도 됩니다. 자기 계발에 투자할 의지가 있는 연봉 8천 수준이면 충분합니다. 우리는 '접근 가능한 럭셔리'를 추구합니다.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Q. 정말 효과가 있나요?</p>
+                <div class="faq-answer">
+                    <p>마술이 아닙니다. 하지만 제대로 된 방향과 노력이 만나면 3개월 만에 완전히 달라진 모습을 보게 됩니다.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Q. 결혼이 목표인가요?</p>
+                <div class="faq-answer">
+                    <p>결혼도, 연애도, 그냥 즐거운 만남도 모두 환영합니다. 중요한 건 <strong>품격있는 관계</strong>입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">B. Glossary</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>용어</th>
+                            <th>정의</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>로열 소사이어티</strong></td><td>브랜드명. 엘리트 남성들의 사교 클럽</td></tr>
+                        <tr><td><strong>디렉터</strong></td><td>코치이자 운영자. 변화를 이끄는 사람</td></tr>
+                        <tr><td><strong>소셜링</strong></td><td>자연스러운 사교 활동을 통한 만남</td></tr>
+                        <tr><td><strong>개츠비 효과</strong></td><td>매력적인 집단에 속함으로써 개인 매력 증폭</td></tr>
+                        <tr><td><strong>Status Game</strong></td><td>경제력과 사회적 지위로 승부하는 연애 방식</td></tr>
+                        <tr><td><strong>Brotherhood</strong></td><td>멤버 간 형제와 같은 유대감</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p class="logo playfair">ROYAL SOCIETY</p>
+        <p class="tagline">37세, 게임의 룰이 바뀝니다.</p>
+
+        <div class="closing">
+            <p>
+                "평범한 3040 남성을<br>
+                '어디서나 대우받는 매력적인 남자'로 재탄생시키고,<br>
+                그들이 함께 어울리며 인생을 즐기는<br>
+                '가장 든든한 형제들의 아지트'<br><br>
+                그것이 로열 소사이어티입니다."
+            </p>
+        </div>
+
+        <a href="#" class="cta-button" style="margin-top: 30px;">입장 신청하기</a>
+
+        <p class="copyright">
+            © 2025 Royal Society. All Rights Reserved.<br>
+            This document is confidential and intended solely for the recipient.<br>
+            Unauthorized distribution is prohibited.
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .phase-card, .pricing-card, .value-card, .activity-card, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+    </script>
+
+</body>
+</html>
